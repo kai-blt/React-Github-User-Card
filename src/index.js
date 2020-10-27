@@ -75,7 +75,9 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;    
-    min-height: 100vh;
+    min-height: 100vh;   
+    width: 80%;
+    margin: auto;
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     text-align: center;

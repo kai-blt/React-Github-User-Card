@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import FollowersCard from './FollowersCard';
 
 const CardContainer = styled.div`
     display: flex;
@@ -9,7 +10,8 @@ const CardContainer = styled.div`
     border-radius: 10px;
     background-color: #006666;
     box-shadow: 10px 10px 40px #000;
-    margin: 10% 0;
+    width: 40%;
+    margin: 10% auto;
     padding: 4% 0;
 
     img {
@@ -24,9 +26,27 @@ const CardContainer = styled.div`
 
 `;
 
+const FollowerContainer = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 4%;
+    div {
+        width: 50%;
+    }
+    img {
+        border-radius: 100%;
+        width: 10%;
+    }
+
+`;
+
 
 const Card = (props) => {
-    const { id, location, login, html_url, avatar_url, followers, following} = props;
+    const { id, location, login, html_url, avatar_url, followers, following, followersData } = props;
+    
+    console.log('HERES THE FOLLOWERS DATA', followersData)
     return (
         <>
         <CardContainer key={id}>
@@ -41,6 +61,15 @@ const Card = (props) => {
             <div>
                 Followers: {followers} - Following: {following}
             </div>
+            <FollowerContainer>              
+                {
+                followersData 
+                    ? followersData.map(follower => {
+                        return <FollowersCard login={follower.login} avatar_url={follower.avatar_url}/>
+                    })
+                    : null 
+                }                
+            </FollowerContainer>
         </CardContainer>
         </>
     )

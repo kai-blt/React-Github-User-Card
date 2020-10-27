@@ -9,26 +9,31 @@ class App extends React.Component {
     this.state = {
       user_names: ['kai-blt', 'ETBassist', 'kpace622'],
       user_data: [],
+      followers_data: [],
       baseUrl: 'https://api.github.com/users/'
     }    
   }
 
-  getUsers = () => {
+  //Chaining Axios Gets with Axios.all!
+  getUserData = () => {
     this.state.user_names.forEach(user => {
-      Axios.get(`${this.state.baseUrl}${user}`)
-      .then(res => {
-        const data = res.data;
-        console.log(data);
-        this.setState({user_data: [...this.state.user_data, data]})
+      Axios.all([Axios.get(`${this.state.baseUrl}${user}`), Axios.get(`${this.state.baseUrl}${user}/followers`)])
+      .then(Axios.spread((...res) => {
+        const userData = res[0].data;
+        const followersData = res[1].data;
+        // console.log(data);
+        this.setState({user_data: [...this.state.user_data, userData]})
+        this.setState({followers_data: [...this.state.followers_data, followersData]})
         console.log(this.state)
-      })
+      }))
       .catch(err => console.log(err.errors));
     })    
   }
 
+ 
+  //After component mounts, get User Data
   componentDidMount() {
-    this.getUsers();
-    console.log(this.state.user_data)
+    this.getUserData();
   }
 
   
@@ -37,14 +42,15 @@ class App extends React.Component {
       <>
         <h1>GitHub User Fetch API</h1>
         { this.state.user_data
-            ? this.state.user_data.map(user => 
+            ? this.state.user_data.map((user, index) => 
               <Card key={user.id}
                 login={user.login}
                 html_url={user.html_url}
                 avatar_url={user.avatar_url}   
                 location={user.location}
                 followers={user.followers}
-                following={user.following}             
+                following={user.following}
+                followersData={this.state.followers_data[index]}
               />
             )
             : 'NO DATA' 
