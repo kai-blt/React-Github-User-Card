@@ -59,6 +59,9 @@ const Card = (props) => {
                 <img src={avatar_url} alt={login}/>
             </div>            
             <div>
+                <img src={`http://ghchart.rshah.org/${login}`} alt={login} />
+            </div>
+            <div>
                 Followers: {followers} - Following: {following}
             </div>
             <FollowerContainer>              
