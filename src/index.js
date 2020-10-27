@@ -84,7 +84,22 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 4rem;
+    font-family: 'Roboto Slab', serif;
+    font-size: 6rem;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:visited {
+      color: #fff;
+    }
+    &:hover {
+      color: #222;
+      transition: all 0.25s ease-in-out
+    }
+    transition: all 0.25s ease-in-out
   }
 
 `;
