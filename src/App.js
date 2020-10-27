@@ -59,11 +59,11 @@ class App extends React.Component {
 
 
   //After component updates, get User Data
-  componentDidUpdate() {
-    if (this.state.search_value === null) {
-      this.setState({user_names: this.defaultUsers})
-    } 
-  }
+  // componentDidUpdate() {
+  //   if (this.state.search_value.length > 0) {
+  //     this.setState({user_names: this.defaultUsers})
+  //   } 
+  // }
 
   //Handlers
   handleChange = (e) => {
