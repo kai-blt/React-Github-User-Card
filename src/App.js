@@ -29,7 +29,7 @@ class App extends React.Component {
         // console.log(data);
         this.setState({user_data: [...this.state.user_data, userData]})
         this.setState({followers_data: [...this.state.followers_data, followersData]})
-        console.log(this.state)
+        // console.log(this.state)
       }))
       .catch(err => console.log(err.errors));
     })    
@@ -44,7 +44,7 @@ class App extends React.Component {
         // console.log(data);
         this.setState({user_data: [...this.state.user_data, userData]})
         this.setState({followers_data: [...this.state.followers_data, followersData]})
-        console.log(this.state)
+        // console.log(this.state)
       }))
       .catch(err => console.log(err.errors));
     }    

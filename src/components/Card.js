@@ -46,13 +46,13 @@ const FollowerContainer = styled.div`
 const Card = (props) => {
     const { id, location, login, html_url, avatar_url, followers, following, followersData } = props;
     
-    console.log('HERES THE FOLLOWERS DATA', followersData)
+    // console.log('HERES THE FOLLOWERS DATA', followersData)
     return (
         <>
         <CardContainer key={id}>
             <div>
                 <h2>{login.toUpperCase()}</h2>
-                <a href={html_url} target="_blank">{html_url}</a>
+                <a href={html_url} target="_blank" rel="noreferrer">{html_url}</a>
                 <h3>{location}</h3>
             </div>
             <div>
