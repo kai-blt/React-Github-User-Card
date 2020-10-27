@@ -11,7 +11,7 @@ const CardContainer = styled.div`
     background-color: #006666;
     box-shadow: 10px 10px 40px #000;
     width: 40%;
-    margin: 10% auto;
+    margin: 2% auto;
     padding: 4% 0;
 
     img {
@@ -33,7 +33,7 @@ const FollowerContainer = styled.div`
     width: 100%;
     padding: 4%;
     div {
-        width: 50%;
+        width: 25%;
     }
     img {
         border-radius: 100%;

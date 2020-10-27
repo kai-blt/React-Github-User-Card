@@ -1,13 +1,15 @@
 import React from 'react'
 import Axios from 'axios'
 import Card from './components/Card'
+import styled from 'styled-components'
+
 
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user_names: ['kai-blt', 'ETBassist', 'kpace622'],
+      user_names: ['kai-blt', 'schroeder-g', 'ETBassist', 'kpace622'],
       user_data: [],
       followers_data: [],
       baseUrl: 'https://api.github.com/users/'
