@@ -37,7 +37,7 @@ const FollowerContainer = styled.div`
     }
     img {
         border-radius: 100%;
-        width: 10%;
+        width: 40%;
     }
 
 `;
@@ -52,7 +52,7 @@ const Card = (props) => {
         <CardContainer key={id}>
             <div>
                 <h2>{login.toUpperCase()}</h2>
-                <a href={html_url}>{html_url}</a>
+                <a href={html_url} target="_blank">{html_url}</a>
                 <h3>{location}</h3>
             </div>
             <div>
