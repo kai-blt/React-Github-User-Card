@@ -1,7 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
 import Card from './components/Card'
-import styled from 'styled-components'
 
 
 

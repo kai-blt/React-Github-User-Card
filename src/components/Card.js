@@ -68,7 +68,7 @@ const Card = (props) => {
                 {
                 followersData 
                     ? followersData.map(follower => {
-                        return <FollowersCard login={follower.login} avatar_url={follower.avatar_url}/>
+                        return <FollowersCard key={follower.id} login={follower.login} avatar_url={follower.avatar_url} html_url={follower.html_url}/>
                     })
                     : null 
                 }                
