@@ -24,6 +24,17 @@ const CardContainer = styled.div`
         font-weight: 700;
     }
 
+  
+    @media (max-width: 800px) {
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    @media (max-width: 500px) {
+        width: 100%;
+        font-size: 1rem;
+    }
+    
 `;
 
 const FollowerContainer = styled.div`
